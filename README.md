@@ -1,24 +1,32 @@
-# CSS y Bootstrap 5
+# Aprender CSS con Bootstrap 5
 
-Sitio estático de una sola página: cada elemento de CSS y Bootstrap 5 con su definición, una explicación simple, el resultado en vivo y el código, más un probador con revisor de CSS y un diccionario de propiedades.
+Guía en español para aprender a dar estilo a una página web, paso a paso. Funciona como un MDN simplificado y dedicado solo a CSS, con Bootstrap 5.3 como apoyo.
 
-No necesita compilación, base de datos ni servidor especial: se publica tal cual.
+| Parte | Qué contiene |
+|---|---|
+| 1. Armar la página (HTML) | El esqueleto de una página; el `head` con el título, el favicon y las hojas de estilo; las zonas de la página (`header`, `nav`, `main`, `footer`); cómo ordenar la hoja de estilos; una hoja de estilos real explicada parte por parte. |
+| 2. Aprender CSS paso a paso | Reglas, selectores (con un probador de selectores), estados como `:hover`, qué regla gana, colores y medidas, texto, espacios y bordes, `display`, `position`, Flexbox, Grid, adaptación al celular, variables y animaciones. |
+| 3. Buscar y consultar | "¿Qué quiero hacer?" (131 soluciones buscables), estilos para cada etiqueta (46 etiquetas) y el diccionario de propiedades (115 propiedades): qué va en cada parte del valor, qué pasa si falta una parte, todos los valores posibles y un probador para ver el resultado. |
+| 4. Practicar | 67 actividades que se corrigen solas, un probador que revisa el código línea por línea y los errores más comunes. |
+| 5. Bootstrap 5 | Cómo se agrega, la rejilla, las clases útiles, los componentes y qué clase hace lo mismo que cada propiedad de CSS. |
+
+Arriba de la página hay un buscador (atajo: tecla `/`) que encuentra etiquetas (`hr`), propiedades (`border-top`) y también lo que se quiere lograr escrito con palabras propias ("línea separadora", "centrar", "fondo de toda la página").
 
 ## Archivos
 
 | Archivo | Para qué sirve |
 |---|---|
-| `index.html` | La página completa (HTML, CSS y JavaScript en un solo archivo) |
-| `favicon.svg` | Ícono de la pestaña del navegador |
-| `vercel.json` | Encabezados de seguridad para Vercel (en otros servicios se ignora) |
-| `.gitignore` | Archivos que Git no debe subir |
-| `README.md` | Este instructivo |
+| `index.html` | **La guía completa en un solo archivo**: el contenido, los estilos, el programa, los datos y Bootstrap 5.3.3 (licencia MIT). No depende de ningún otro archivo ni de internet. |
+| `favicon.svg` | Ícono de la pestaña del navegador. |
+| `.nojekyll` | Archivo vacío: indica a GitHub Pages que publique los archivos tal cual. |
+| `.gitignore` | Archivos que Git no debe subir. |
+| `README.md` | Este instructivo. |
 
-Bootstrap 5.3.3 se carga desde jsDelivr, así que el sitio necesita conexión a internet. Para no depender del CDN, ver el final de este documento.
+## Abrir la guía en la computadora
 
-## Probarlo en la computadora
+Abrir `index.html` con doble clic. Funciona sin conexión a internet.
 
-Abrir `index.html` con doble clic. Para verlo exactamente como en un servidor:
+También se puede abrir con la extensión Live Server de VS Code, o con un servidor local:
 
 ```bash
 python -m http.server 8000
@@ -26,25 +34,25 @@ python -m http.server 8000
 
 y entrar a <http://localhost:8000>.
 
-## Opción 1: GitHub + Vercel (recomendada)
+## Publicar en GitHub Pages
 
-Cada cambio que se sube a GitHub se publica solo en unos segundos.
+### 1. Subir los archivos
 
-### 1. Subir los archivos a GitHub
-
-**Desde la web, sin instalar nada:**
+**Desde la web de GitHub, sin instalar nada:**
 
 1. Entrar a <https://github.com>, iniciar sesión y elegir **New repository**.
-2. Nombre: `css-bootstrap`. Visibilidad: **Public**. Crear el repositorio sin agregar README.
-3. En la página del repositorio vacío, elegir **uploading an existing file**.
-4. Arrastrar `index.html`, `favicon.svg`, `vercel.json` y `README.md` (el `.gitignore` es opcional) y confirmar con **Commit changes**.
+2. Nombre: `css-bootstrap`. Visibilidad: **Public**. Crear el repositorio.
+3. En el repositorio, elegir **Add file → Upload files**.
+4. Arrastrar `index.html` y `favicon.svg` (y, si se quiere, `README.md` y `.nojekyll`). Confirmar con **Commit changes**.
 
-**Con Git, desde la carpeta del sitio:**
+`index.html` tiene que quedar en la raíz del repositorio, no dentro de otra carpeta.
+
+**Con Git, desde la carpeta de la guía:**
 
 ```bash
 git init
 git add .
-git commit -m "Primera versión"
+git commit -m "Guía de CSS"
 git branch -M main
 git remote add origin https://github.com/USUARIO/css-bootstrap.git
 git push -u origin main
@@ -52,70 +60,40 @@ git push -u origin main
 
 Reemplazar `USUARIO` por el nombre de usuario de GitHub.
 
-### 2. Publicar en Vercel
-
-1. Entrar a <https://vercel.com> y registrarse con la cuenta de GitHub.
-2. **Add New… → Project**, buscar el repositorio `css-bootstrap` y elegir **Import**.
-3. **Framework Preset: Other**. No hace falta tocar *Build Command* ni *Output Directory*.
-4. **Deploy**.
-
-Vercel entrega una dirección del tipo `https://css-bootstrap.vercel.app` (si el nombre está ocupado, agrega un sufijo). Desde **Settings → Domains** se puede conectar un dominio propio.
-
-## Opción 2: GitHub Pages
-
-Con el repositorio ya creado (paso 1 de la opción anterior):
+### 2. Activar GitHub Pages
 
 1. En el repositorio: **Settings → Pages**.
 2. En **Build and deployment**, *Source*: **Deploy from a branch**.
 3. *Branch*: **main** y carpeta **/ (root)**. **Save**.
 
-En uno o dos minutos el sitio queda en `https://USUARIO.github.io/css-bootstrap/`.
+En uno o dos minutos la guía queda en `https://USUARIO.github.io/css-bootstrap/`. El nombre del repositorio va al final de la dirección.
 
-## Opción 3: Vercel desde la terminal (sin GitHub)
+### Si algo no se ve bien
 
-Requiere Node.js. Dentro de la carpeta del sitio:
+- **"There isn't a GitHub Pages site here":** revisar la dirección (tiene que terminar con el nombre del repositorio) y esperar a que termine la publicación. En la pestaña **Actions**, el proceso *pages build and deployment* tiene que terminar con un tilde verde.
+- **Se ve una versión vieja:** recargar con Ctrl + F5 para que el navegador no use la copia guardada (caché).
+- **Aparece un aviso rojo arriba de la página:** el aviso dice qué falló. Lo más común es que el archivo `index.html` se haya subido incompleto: volver a subirlo.
+- **Aviso "Cargando la guía…" que no desaparece:** el navegador tiene JavaScript desactivado o bloqueado. Activarlo y recargar.
 
-```bash
-npx vercel@latest          # primera vez: inicia sesión y crea una vista previa
-npx vercel@latest --prod   # publica en producción
-```
+## Actualizar la guía
 
-## Opción 4: Servidor propio con Nginx
+Reemplazar `index.html` por la versión nueva: en GitHub con **Add file → Upload files**, o con `git commit` y `git push`. GitHub Pages vuelve a publicar solo.
 
-```bash
-# desde la computadora
-scp index.html favicon.svg usuario@servidor:/var/www/css-bootstrap/
-```
+## Cómo está armado el archivo
 
-Bloque de configuración (`/etc/nginx/sites-available/css-bootstrap`):
+Dentro de `index.html` hay bloques `<script>` con un `id` que dice qué contienen:
 
-```nginx
-server {
-    listen 80;
-    server_name css.midominio.com;
-    root /var/www/css-bootstrap;
-    index index.html;
+| Bloque | Contenido |
+|---|---|
+| `js-datos-propiedades` | Las fichas del diccionario de propiedades. |
+| `js-datos-elementos` | Los estilos para cada etiqueta. |
+| `js-datos-recetas` | Las soluciones de "¿Qué quiero hacer?". |
+| `js-datos-actividades` | Las actividades y lo que revisa cada una. |
+| `js-revisor` | El revisor de CSS que usan el probador y las actividades. |
+| `js-verificador` | La comprobación automática de las actividades. |
+| `js-app` | El funcionamiento de la página: buscador, pestañas, fichas, probadores. |
+| `bs-css` y `bs-js` | Bootstrap 5.3.3, sin modificar. |
 
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}
-```
+Cada entrada de datos se agrega a una lista con `push`. Para sumar una solución, una etiqueta o una actividad, se puede copiar una entrada existente del mismo bloque y cambiarla. El texto entre `` `backticks` `` se muestra como código.
 
-```bash
-sudo ln -s /etc/nginx/sites-available/css-bootstrap /etc/nginx/sites-enabled/
-sudo nginx -t && sudo systemctl reload nginx
-sudo certbot --nginx -d css.midominio.com   # certificado HTTPS gratuito
-```
-
-## Actualizar el sitio
-
-Editar `index.html` y subir el cambio: en GitHub con **Add file → Upload files** (reemplaza el archivo) o con `git commit` y `git push`. Vercel y GitHub Pages vuelven a publicar solos.
-
-## Usarlo sin depender del CDN
-
-1. Descargar `bootstrap.min.css` y `bootstrap.bundle.min.js` (versión 5.3.3) desde <https://getbootstrap.com>.
-2. Copiarlos junto a `index.html`.
-3. En `index.html`, cambiar el `href` del `<link id="bs-css">` por `bootstrap.min.css` y el `src` del `<script id="bs-js">` por `bootstrap.bundle.min.js`.
-
-Los ejemplos en vivo toman las rutas de esos dos elementos, así que no hay que cambiar nada más.
+El avance de las actividades se guarda solo en el navegador de cada persona: no se envía a ningún servidor.
