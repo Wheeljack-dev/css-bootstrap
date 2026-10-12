@@ -1,16 +1,16 @@
-# Aprender CSS con Bootstrap 5
+# Guía de CSS y Bootstrap 5
 
-Guía en español para aprender a dar estilo a una página web, paso a paso. Funciona como un MDN simplificado y dedicado solo a CSS, con Bootstrap 5.3 como apoyo.
+Guía práctica en español para aprender a diseñar páginas web con CSS. Funciona como un MDN simplificado y dedicado exclusivamente a CSS, con Bootstrap 5.3 como complemento. Cada tema reúne una explicación concisa, un ejemplo en funcionamiento y el código listo para copiar o modificar.
 
-| Parte | Qué contiene |
+| Parte | Contenido |
 |---|---|
-| 1. Armar la página (HTML) | El esqueleto de una página; el `head` con el título, el favicon y las hojas de estilo; las zonas de la página (`header`, `nav`, `main`, `footer`); cómo ordenar la hoja de estilos; una hoja de estilos real explicada parte por parte. |
-| 2. Aprender CSS paso a paso | Reglas, selectores (con un probador de selectores), estados como `:hover`, qué regla gana, colores y medidas, texto, espacios y bordes, `display`, `position`, Flexbox, Grid, adaptación al celular, variables y animaciones. |
-| 3. Buscar y consultar | "¿Qué quiero hacer?" (131 soluciones buscables), estilos para cada etiqueta (46 etiquetas) y el diccionario de propiedades (115 propiedades): qué va en cada parte del valor, qué pasa si falta una parte, todos los valores posibles y un probador para ver el resultado. |
-| 4. Practicar | 67 actividades que se corrigen solas, un probador que revisa el código línea por línea y los errores más comunes. |
-| 5. Bootstrap 5 | Cómo se agrega, la rejilla, las clases útiles, los componentes y qué clase hace lo mismo que cada propiedad de CSS. |
+| 1. Estructura de la página (HTML) | Esqueleto del documento; el `head` con el título, el favicon y las hojas de estilo; secciones de la página (`header`, `nav`, `main`, `footer`); organización de la hoja de estilos; análisis de una hoja de estilos completa, parte por parte. |
+| 2. Fundamentos de CSS | Sintaxis, selectores (con un probador de selectores), pseudo-clases y pseudo-elementos, cascada y especificidad, colores y unidades, tipografía, modelo de caja, `display`, `position`, Flexbox, Grid, diseño adaptable, variables y animaciones. |
+| 3. Referencia | Soluciones por objetivo (131), estilos por etiqueta (46) y diccionario de propiedades (115): partes del valor, efecto de omitir cada parte, valores admitidos y un probador interactivo. |
+| 4. Práctica | 67 actividades con corrección automática, un probador con revisión del código línea por línea y los errores más frecuentes. |
+| 5. Bootstrap 5 | Incorporación, sistema de rejilla, clases utilitarias, componentes y equivalencias entre CSS y Bootstrap. |
 
-Arriba de la página hay un buscador (atajo: tecla `/`) que encuentra etiquetas (`hr`), propiedades (`border-top`) y también lo que se quiere lograr escrito con palabras propias ("línea separadora", "centrar", "fondo de toda la página").
+El buscador superior (atajo: tecla `/`) encuentra etiquetas (`hr`), propiedades (`border-top`) y también descripciones del resultado buscado («línea separadora», «centrar», «color de fondo»).
 
 ## Archivos
 
@@ -87,13 +87,13 @@ Dentro de `index.html` hay bloques `<script>` con un `id` que dice qué contiene
 |---|---|
 | `js-datos-propiedades` | Las fichas del diccionario de propiedades. |
 | `js-datos-elementos` | Los estilos para cada etiqueta. |
-| `js-datos-recetas` | Las soluciones de "¿Qué quiero hacer?". |
+| `js-datos-recetas` | Las soluciones por objetivo. |
 | `js-datos-actividades` | Las actividades y lo que revisa cada una. |
 | `js-revisor` | El revisor de CSS que usan el probador y las actividades. |
 | `js-verificador` | La comprobación automática de las actividades. |
 | `js-app` | El funcionamiento de la página: buscador, pestañas, fichas, probadores. |
 | `bs-css` y `bs-js` | Bootstrap 5.3.3, sin modificar. |
 
-Cada entrada de datos se agrega a una lista con `push`. Para sumar una solución, una etiqueta o una actividad, se puede copiar una entrada existente del mismo bloque y cambiarla. El texto entre `` `backticks` `` se muestra como código.
+Cada entrada de datos se agrega a una lista con `push`. Para incorporar una solución, una etiqueta o una actividad, puede copiarse una entrada existente del mismo bloque y modificarla. El texto entre `` `backticks` `` se muestra como código.
 
 El avance de las actividades se guarda solo en el navegador de cada persona: no se envía a ningún servidor.
